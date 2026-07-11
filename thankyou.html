@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Thank You | Dough N Dosa</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <img src="assets/logo.png" class="logo" />
+
+      <h1>Thank You ❤️</h1>
+
+      <p class="subtitle">Thank you for your valuable feedback. We are continuously working to improve your experience.</p>
+
+      <button id="continueBtn">Continue to Payment</button>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script>
+      document.getElementById("continueBtn").addEventListener("click", function () {
+        window.location.href = ROUTES.PAYMENT;
+      });
+    </script>
+  </body>
+</html>

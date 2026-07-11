@@ -1,0 +1,281 @@
+/* ==========================================
+   Dough N Dosa
+   animations.css
+========================================== */
+
+/* ===========================
+   Card Fade In
+=========================== */
+
+.container {
+  animation: fadeInUp 0.8s ease;
+}
+
+/* ===========================
+   Floating Logo
+=========================== */
+
+.logo {
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+/* ===========================
+   Star Hover Animation
+=========================== */
+
+.star {
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.star:hover {
+  animation: starBounce 0.45s ease;
+}
+
+/* Selected Star */
+
+.star.selected {
+  animation: starSelected 0.45s ease;
+}
+
+/* ===========================
+   Button Animation
+=========================== */
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  animation: pulseButton 0.8s infinite;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* ===========================
+   Rating Card
+=========================== */
+
+.rating-card {
+  animation: cardAppear 0.8s ease;
+}
+
+/* ===========================
+   Loading Screen
+=========================== */
+
+#loadingScreen {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===========================
+   Loader
+=========================== */
+
+.loader {
+  animation:
+    spin 1s linear infinite,
+    loaderPulse 1.5s infinite;
+}
+
+/* ===========================
+   Background Floating
+=========================== */
+
+.background::before,
+.background::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  opacity: 0.08;
+
+  animation: floatBubble 10s linear infinite;
+}
+
+.background::before {
+  width: 260px;
+  height: 260px;
+
+  background: white;
+
+  top: -90px;
+  left: -90px;
+}
+
+.background::after {
+  width: 220px;
+  height: 220px;
+
+  background: #f4b400;
+
+  bottom: -80px;
+  right: -80px;
+
+  animation-delay: 5s;
+}
+
+/* ==========================================
+   KEYFRAMES
+========================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes starBounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.35);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes starSelected {
+  0% {
+    transform: scale(0.7);
+  }
+
+  60% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes pulseButton {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+/* ==========================================
+   Utility Classes
+========================================== */
+
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+.zoom-in {
+  animation: cardAppear 0.45s ease;
+}
+
+.bounce {
+  animation: starBounce 0.45s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex !important;
+}

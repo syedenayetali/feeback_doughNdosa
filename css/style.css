@@ -1,0 +1,335 @@
+/* ===========================
+   Dough N Dosa
+   style.css
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0b5d3b;
+  --primary-dark: #08482d;
+
+  --secondary: #f4b400;
+
+  --white: #ffffff;
+
+  --light: #f8f9fa;
+
+  --text: #2f2f2f;
+
+  --shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+
+  --radius: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  min-height: 100vh;
+
+  background: linear-gradient(135deg, #0b5d3b, #14875b);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  color: var(--text);
+
+  position: relative;
+}
+
+/* ===========================
+Background
+=========================== */
+
+.background {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 40%);
+}
+
+/* ===========================
+Container
+=========================== */
+
+.container {
+  width: min(92%, 430px);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 28px;
+
+  padding: 40px 28px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+
+  z-index: 10;
+}
+
+/* ===========================
+Logo
+=========================== */
+
+.logo {
+  width: 140px;
+
+  margin: auto;
+
+  display: block;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  padding: 8px;
+}
+
+/* ===========================
+Heading
+=========================== */
+
+h1 {
+  color: #fff;
+
+  font-size: 32px;
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+}
+
+/* ===========================
+Card
+=========================== */
+
+.rating-card {
+  background: #fff;
+
+  border-radius: 22px;
+
+  padding: 30px 20px;
+
+  margin-bottom: 30px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ===========================
+Stars
+=========================== */
+
+.stars {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 42px;
+
+  color: #d4d4d4;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.star.active {
+  color: var(--secondary);
+}
+
+.star.selected {
+  color: var(--secondary);
+
+  transform: scale(1.15);
+}
+
+/* ===========================
+Rating Text
+=========================== */
+
+#ratingText {
+  font-size: 17px;
+
+  color: #666;
+
+  font-weight: 500;
+
+  min-height: 28px;
+}
+
+/* ===========================
+Button
+=========================== */
+
+button {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  padding: 16px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  border-radius: 15px;
+
+  background: var(--secondary);
+
+  color: #fff;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 30px rgba(244, 180, 0, 0.45);
+}
+
+button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* ===========================
+Loading
+=========================== */
+
+#loadingScreen {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  z-index: 9999;
+}
+
+.loader {
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 50%;
+
+  border: 6px solid rgba(255, 255, 255, 0.2);
+
+  border-top: 6px solid #fff;
+
+  animation: spin 1s linear infinite;
+
+  margin-bottom: 20px;
+}
+
+#loadingScreen p {
+  color: #fff;
+
+  font-size: 18px;
+}
+
+/* ===========================
+Footer
+=========================== */
+
+.footer {
+  margin-top: 25px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 13px;
+}
+
+/* ===========================
+Animations
+=========================== */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 0.8s ease;
+}
