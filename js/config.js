@@ -18,7 +18,7 @@ const CONFIG = {
 
   /* Google Review Link */
 
-  GOOGLE_REVIEW_URL: "https://maps.app.goo.gl/aZxFfWLD7bLvbwcHA?g_st=ic",
+  GOOGLE_REVIEW_URL: "https://search.google.com/local/writereview?placeid=ChIJzeG8ssDBDDkRSmcXuSA8fPI",
 
   /* Payment */
 
